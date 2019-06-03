@@ -6,6 +6,7 @@
 |name|string|null: false|
 |email|string|null: false|
 |password|string|null: false|
+
 ### Association
 - has_many :groups, through: :member
 - has_many :messages
@@ -19,8 +20,8 @@
 |groupe_name|string|null: false,|
 
 ### Association
-has_many :users through: :member
-has_many :messages
+- has_many :users through: :member
+- has_many :messages
 
 ## messageグループ
 |Column|Type|Options|
@@ -31,9 +32,8 @@ has_many :messages
 |image|string|null: true, |
 
 ### Association
-
-belongs_to :group
-belongs_to :user
+- belongs_to :group
+- belongs_to :user
 
 ## membersテーブル
 
