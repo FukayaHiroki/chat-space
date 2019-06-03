@@ -1,35 +1,35 @@
 # README
-## userテーブル
+## usersテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false|
+|name|string|null: false, index :true|
 |email|string|null: false|
 |password|string|null: false|
 
 ### Association
-- has_many :groups, through: :member
+- has_many :groups, through: :members
 - has_many :messages
+- has_many :members
 
-## groupeテーブル
+## groupesテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|comment_id|integer|null: , foreign_key: true|
-|user_id|integer|null: ,foreign_key: true|
-|groupe_name|string|null: false,|
+|name|string|null: false|
 
 ### Association
-- has_many :users through: :member
+- has_many :users through: :members
 - has_many :messages
+- has_many :members
 
-## messageグループ
+## messagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-|image|string|null: true, |
+|body|text|
+|user|reference|null: false, foreign_key: true|
+|group|reference|null: false, foreign_key: true|
+|image|string|
 
 ### Association
 - belongs_to :group
@@ -39,8 +39,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|reference|null: false, foreign_key: true|
+|group|reference|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
