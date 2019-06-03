@@ -19,7 +19,7 @@
 |name|string|null: false|
 
 ### Association
-- has_many :users through: :members
+- has_many :users, through: :members
 - has_many :messages
 - has_many :members
 
@@ -27,8 +27,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |body|text|
-|user|reference|null: false, foreign_key: true|
-|group|reference|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 |image|string|
 
 ### Association
@@ -39,8 +39,8 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user|reference|null: false, foreign_key: true|
-|group|reference|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
 - belongs_to :group
