@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  get 'chat-space' => 'messages#index'
+  devise_for :users
 end
