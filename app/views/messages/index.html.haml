@@ -1,0 +1,36 @@
+.flash-box
+  .notice グループを編集しました
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name よつばと!
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__new-group
+            = link_to 'test'  do
+              %i=fa_icon "edit"
+          %li.side-header__box__menu__edit-user
+            = link_to 'test' do
+              %i.fa.fa-cog
+    .groups
+      .group
+        = render "group"
+        = render "group"
+  .chat-main
+    .main-header
+      .main-header__left-box
+        %h2.main-header__left-box__current-group current-group
+        %ul.main-header__left-box__member-list Member : member-list
+      = link_to 'test' do
+        .main-header__edit-btn Edit
+    .messages
+      = render "message"
+      = render "message"
+      = render "message"
+    .form
+      %form.new-massage
+        .input-box
+          %input.input-box__text{name: "message[content]",placeholder: "type a message",type: "text"}/
+          %label.input-box__image
+            %i.fa.fa-image
+        %input.submit-btm{"data-disable-with": "Send", name: "commit", type: "submit", value: "Send"}/
