@@ -32,16 +32,16 @@
           display: flex;
         }
         &__menu{
-            float: left;
-            li{
-              font-size: inherit;
-              text-rendering: auto;
-              display: inline-block;
-              height: 16px;
-              i{
-                color: $font-color;
-              }
+          float: left;
+          li{
+            font-size: inherit;
+            text-rendering: auto;
+            display: inline-block;
+            height: 16px;
+            i{
+              color: $font-color;
             }
+          }
         }
       }
     }
