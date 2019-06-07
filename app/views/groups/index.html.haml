@@ -2,7 +2,7 @@
   .notice
 .wrapper
   .chat-side
-    = render "side-header"
+    = render "messages/side-header"
   .chat-main
     .main-header
       .main-header__left-box
@@ -11,9 +11,7 @@
       = link_to '問題のところ' do
         .main-header__edit-btn Edit
     .messages
-      = render "message"
-      = render "message"
-      = render "message"
+      = render "messages/message"
     .form
       %form.new-massage
         .input-box
