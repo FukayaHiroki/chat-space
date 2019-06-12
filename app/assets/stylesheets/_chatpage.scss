@@ -2,13 +2,14 @@
   box-sizing: border-box;
 }
 .flash-box{
-  color: $font-color;
+  color: $white;
   font-size: 1rem;
   font-weight: lighter;
   text-align: center;
     width: 100vw;
   .notice{
-    background-color: $lite-blue;
+    background-color: $light_blue
+    ;
   }
 }
 .wrapper{
@@ -27,7 +28,7 @@
         justify-content: space-between;
         &__user-name{
           font-size: 16px;
-          color: $font-color;
+          color: $white;
           font-weight: bold;
           display: flex;
         }
@@ -39,7 +40,7 @@
             display: inline-block;
             height: 16px;
             i{
-              color: $font-color;
+              color: $white;
             }
           }
         }
@@ -51,15 +52,18 @@
       padding: 40px 20px 0;
       .group{
         margin-bottom: 40px;
-        &__group-name{
-          font-size: 15px;
-          margin-bottom: 5px;
-          color: $font-color;
-        }
-        &__latest-message{
-          font-size: 11px;
-          color: $font-color;
-          margin-bottom: 40px;
+        a{
+          text-decoration: none;
+          .group__name{
+            font-size: 15px;
+            margin-bottom: 5px;
+            color: $white;
+          }
+          .group__message{
+            font-size: 11px;
+            color: $white;
+            margin-bottom: 40px;
+          }
         }
       }
     }
@@ -91,9 +95,9 @@
         height: 40px;
         padding: 0 20px;
         margin-top: 28px;
-        border: solid 1px $lite-blue;
-        color: $lite-blue;
-        background-color: $font-color;
+        border: solid 1px $light_blue;
+        color: $light_blue;
+        background-color: $white;
         line-height: 40px;
         text-decoration: none;
       }
@@ -108,7 +112,7 @@
           display: flex;
           margin-bottom: 10px;
           &__name{
-            color: $gray;
+            color: $black;
             font-size: 16px;
             font-weight: bold;
           }
@@ -120,52 +124,43 @@
         }
         &__text{
           font-size: 14px;
-          color: $gray;
+          color: $black;
         }
       }
     }
-    .form{
+    .form {
+      background-color: #DDDDDD;
+      box-sizing: border-box;
       height: 90px;
-      padding: 20px 40px;
-      background-color: #ddd;
-      .new-massage{
-        display: flex;
-        .input-box{
-          display: flex;
-          position: relative;
-          width: 100%;
-          &__text{
-            height: 50px;
-            width: 100%;
-            padding: 0 40px 0 10px;
-            color: $gray;
-            border-style: none;
-          }
-          &__image{
-            font-size: 1.3rem;
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            cursor: pointer;
-          }
-            i{
-              display: inline-block;
-              font: normal normal normal 14px/1 FontAwesome;
-              font-size: inherit;
-              text-rendering: auto;
-              -webkit-font-smoothing: antialiased;
-            }
+      padding: 20px 50px 20px 40px;
+      &__message {
+        border: none;
+        float: left;
+        height: 50px;
+        width: calc(100% - 150px);
+      }
+      &__mask {
+        background-color: $white;
+        float: left;
+        height: 50px;
+        padding-right: 10px;
+        &__image {
+          font-size: 20px;
+          line-height: 50px;
         }
-        .submit-btm{
-          width: 100px;
-          height: 50px;
-          padding: 0 30px;
-          margin-left: 15px;
-          background-color: $lite-blue;
-          color: $font-color;
-          cursor: pointer;
-          display: flex;
+          .hidden {
+            display: none;
         }
+      }
+      &__submit {
+        background-color: $light_blue;
+        border: none;
+        color: $white;
+        float: right;
+        font-size: 16px;
+        height: 50px;
+        margin-left: 15px;
+        padding: 0 30px;
       }
     }
   }

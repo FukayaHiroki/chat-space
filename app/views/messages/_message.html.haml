@@ -1,5 +1,11 @@
 .massage
   .massage__infomation
-    %p.massage__infomation__name  upper-name
-    %p.massage__infomation__date  2019/06/03(Mon) 12:06:02
-  %p.massage__text fffffffffffff
+    .massage__infomation__name
+      = message.user.name
+    .massage__infomation__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  .massage__text
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
