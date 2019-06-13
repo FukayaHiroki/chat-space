@@ -3,7 +3,7 @@ $(function(){
     var html = `<div class="massage">
                   <div class="massage__infomation">
                     <div class="massage__infomation__name">
-                    ${message.user.name}
+                    ${message.user_name}
                     </div>
                     <div class="massage__infomation__date">
                     ${message.created_at}
@@ -11,34 +11,32 @@ $(function(){
                     </div>
                     <div class="massage__text">
                     <p class="lower-message__content">
-                    ${message.text}
+                    ${message.content}
                     </p>
-                  
                   </div>
                 </div>`
-    return html
+    return html;
   }
-})
-  $(function(){
-    $('#new_message').on('submit',function(e){
-      e.preventDefault();
-      var formData = new FormData(this);
-      var url = $(this).attr('action');
-      $.ajax({
-        url: url,
-        type: "POST",
-        data: formData,
-        dataType: 'json',
-        processData: false,
-        contentType: false
-      })
-      .done(function(data){
-        console.log("test");
-        $('.messages') = buildMessage;
-        $('.message__text').var('');
-      })
-      .fail(function(data){
-        alert("エラー");
-      })
+
+  $('#new_message').on('submit',function(e){
+    e.preventDefault();
+    var formData = new FormData(this);
+    var url = $(this).attr('action');
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: formData,
+      dataType: 'json',
+      processData: false,
+      contentType: false
     })
-  });
+    .done(function(data){
+      var html = buildMessage(data);
+      $('.messages').append(html);
+      $('#new_message')[0].reset();
+    })
+    .fail(function(){
+      alert("エラー");
+    })
+  })
+});
