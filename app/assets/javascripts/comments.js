@@ -3,15 +3,15 @@ $(function(){
     var html = `<div class="massage">
                   <div class="massage__infomation">
                     <div class="massage__infomation__name">
-                    深谷裕貴
+                    ${message.user.name}
                     </div>
                     <div class="massage__infomation__date">
-                    2019/06/12 10:51
+                    ${message.created_at}
                     </div>
                     </div>
                     <div class="massage__text">
                     <p class="lower-message__content">
-                    こんにちは
+                    ${message.text}
                     </p>
                   
                   </div>
@@ -32,11 +32,13 @@ $(function(){
         processData: false,
         contentType: false
       })
-      .done(function(message){
-        console.log(message.text);
+      .done(function(data){
+        console.log("test");
+        $('.messages') = buildMessage;
+        $('.message__text').var('');
       })
-      .fail(function(message){
-        console.log(message.text);
+      .fail(function(data){
+        alert("エラー");
       })
     })
   });
