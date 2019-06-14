@@ -1,5 +1,6 @@
 $(function(){
   function buildMessage(message){
+    var image = (message.image)? `<image class="lower-message__image" src="${message.image}">`:"";
     var html = `<div class="massage">
                   <div class="massage__infomation">
                     <div class="massage__infomation__name">
@@ -9,10 +10,11 @@ $(function(){
                     ${message.created_at}
                     </div>
                     </div>
-                    <div class="massage__text">
+                  <div class="massage__text">
                     <p class="lower-message__content">
                     ${message.content}
                     </p>
+                    ${image}
                   </div>
                 </div>`
     return html;
