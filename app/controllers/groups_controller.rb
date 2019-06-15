@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-
+    @goupe = @goupe.find(params[:id])
   end
   
   def update
