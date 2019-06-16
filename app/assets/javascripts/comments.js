@@ -50,9 +50,7 @@ $(function(){
     var last_message_id = $('.message:last').data('message-id');
     console.log(last_message_id)
     $.ajax({
-      //ルーティングで設定した通りのURLを指定
       url: "/groups/:group_id/api/messages",
-      //ルーティングで設定した通りhttpメソッドをgetに指定
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
