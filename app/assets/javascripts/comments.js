@@ -46,7 +46,6 @@ $(function(){
 
   //自動更新
   var reloadMessages = function() {
-    //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     var last_message_id = $('.message:last').data('message-id');
     console.log(last_message_id)
     $.ajax({
@@ -57,7 +56,6 @@ $(function(){
     })
     .done(function(messages) {
       var insertHTML = '';
-      //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
       messages.forEach(function(message){
         insertHTML = buildMessage(message);
         $('.messages').append(insertHTML);
