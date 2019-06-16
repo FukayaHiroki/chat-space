@@ -1,7 +1,7 @@
 $(function(){
   function buildMessage(message){
     var image = (message.image)? `<image class="lower-message__image" src="${message.image}">`:"";
-    var html = `<div class="message" data-message-id="${message.id}">
+    var html = `<div class="message" data-group-id="${message.group_id}" data-message-id="${message.id}">
                   <div class="message__infomation">
                     <div class="message__infomation__name">
                     ${message.user_name}
@@ -47,9 +47,9 @@ $(function(){
   //自動更新
   var reloadMessages = function() {
     var last_message_id = $('.message:last').data('message-id');
-    console.log(last_message_id)
+    var group_id = $('.message:last').data('group-id');
     $.ajax({
-      url: "/groups/:group_id/api/messages",
+      url: `/groups/${group_id}/api/messages`,
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
