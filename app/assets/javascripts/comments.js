@@ -42,19 +42,20 @@ $(function(){
     .fail(function(){
       alert("エラー");
     })
-  })
+  });
 
   //自動更新
   var reloadMessages = function() {
     var last_message_id = $('.message:last').data('message-id');
     var group_id = $('.message:last').data('group-id');
     $.ajax({
-      url: `/groups/${group_id}/api/messages`,
+      url:`/groups/${group_id}/api/messages`,
       type: 'get',
       dataType: 'json',
       data: {id: last_message_id}
     })
     .done(function(messages) {
+      console.log(messages)
       var insertHTML = '';
       messages.forEach(function(message){
         insertHTML = buildMessage(message);
@@ -66,7 +67,11 @@ $(function(){
       alert("自動更新に失敗しました");
     });
   };
-  setInterval(reloadMessages, 5000);
+  if (location.href.match(/\/groups\/\d+\/messages/)){
+    setInterval(reloadMessages, 5000);
+  }
 });
 
-  
+// i-036cc6b9ae475924a
+// 3.113.75.14
+// 8d7cfd866cb512d20e868a1f24e6d0801d8a1e9905cc08cb171ce9f57e57a258af01817e5e8d4d758879f551f0cee20c7bc82bc73337ec7196358a636b739833
