@@ -7,3 +7,4 @@ class Api::MessagesController < ApplicationController
     end
   end
 end
+
