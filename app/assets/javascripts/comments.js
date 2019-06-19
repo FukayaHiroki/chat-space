@@ -55,7 +55,6 @@ $(function(){
       data: {id: last_message_id}
     })
     .done(function(messages) {
-      console.log(messages)
       var insertHTML = '';
       messages.forEach(function(message){
         insertHTML = buildMessage(message);
@@ -73,7 +72,3 @@ $(function(){
 });
 
 
-// 3.113.75.14
-
-// インスタンスID i-0a118ade90cd29b40
-// エピックIP 52.197.147.197
