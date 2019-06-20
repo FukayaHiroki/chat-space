@@ -92,16 +92,20 @@
           color: #999999;
         }
       }
-        &__edit-btn{
-          height: 40px;
-          padding: 0 20px;
-          margin-top: 28px;
-          border: solid 1px $light_blue;
-          color: $light_blue;
-          background-color: $white;
-          line-height: 40px;
+      &__right-box{
+        a{
           text-decoration: none;
+          .main-header__right-box__edit-btn{
+            height: 40px;
+            padding: 0 20px;
+            margin-top: 28px;
+            border: solid 1px $light_blue;
+            color: $light_blue;
+            background-color: $white;
+            line-height: 40px;
+          }
         }
+      }
     }
     .messages{
       overflow: scroll;
