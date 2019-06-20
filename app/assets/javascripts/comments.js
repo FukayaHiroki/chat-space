@@ -41,6 +41,7 @@ $(function(){
     })
     .fail(function(){
       alert("エラー");
+      $('#send').attr('disabled', false);
     })
   });
 
